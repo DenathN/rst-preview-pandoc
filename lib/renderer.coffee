@@ -39,8 +39,8 @@ render = (text, filePath, callback) ->
   # https://github.com/chjj/marked/issues/354
   text = text.replace(/^\s*<!doctype(\s+.*)?>\s*/i, '')
 
-  path_ = atom.config.get 'markdown-preview-pandoc.pandocPath'
-  opts_ = atom.config.get 'markdown-preview-pandoc.pandocOpts'
+  path_ = atom.config.get 'rst-preview-pandoc.pandocPath'
+  opts_ = atom.config.get 'rst-preview-pandoc.pandocOpts'
   cwd_  = atom.project.getDirectories()
             .filter (d) ->
               d.contains(filePath)

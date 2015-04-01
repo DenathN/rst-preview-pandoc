@@ -45,19 +45,19 @@ module.exports =
 
   activate: ->
     atom.commands.add 'atom-workspace',
-      'markdown-preview-pandoc:toggle': =>
+      'rst-preview-pandoc:toggle': =>
         @toggle()
-      'markdown-preview-pandoc:copy-html': =>
+      'rst-preview-pandoc:copy-html': =>
         @copyHtml()
 
     previewFile = @previewFile.bind(this)
-    atom.commands.add '.tree-view .file .name[data-name$=\\.markdown]', 'markdown-preview-pandoc:preview-file', previewFile
-    atom.commands.add '.tree-view .file .name[data-name$=\\.md]', 'markdown-preview-pandoc:preview-file', previewFile
-    atom.commands.add '.tree-view .file .name[data-name$=\\.mdown]', 'markdown-preview-pandoc:preview-file', previewFile
-    atom.commands.add '.tree-view .file .name[data-name$=\\.mkd]', 'markdown-preview-pandoc:preview-file', previewFile
-    atom.commands.add '.tree-view .file .name[data-name$=\\.mkdown]', 'markdown-preview-pandoc:preview-file', previewFile
-    atom.commands.add '.tree-view .file .name[data-name$=\\.ron]', 'markdown-preview-pandoc:preview-file', previewFile
-    atom.commands.add '.tree-view .file .name[data-name$=\\.txt]', 'markdown-preview-pandoc:preview-file', previewFile
+    atom.commands.add '.tree-view .file .name[data-name$=\\.markdown]', 'rst-preview-pandoc:preview-file', previewFile
+    atom.commands.add '.tree-view .file .name[data-name$=\\.md]', 'rst-preview-pandoc:preview-file', previewFile
+    atom.commands.add '.tree-view .file .name[data-name$=\\.mdown]', 'rst-preview-pandoc:preview-file', previewFile
+    atom.commands.add '.tree-view .file .name[data-name$=\\.mkd]', 'rst-preview-pandoc:preview-file', previewFile
+    atom.commands.add '.tree-view .file .name[data-name$=\\.mkdown]', 'rst-preview-pandoc:preview-file', previewFile
+    atom.commands.add '.tree-view .file .name[data-name$=\\.ron]', 'rst-preview-pandoc:preview-file', previewFile
+    atom.commands.add '.tree-view .file .name[data-name$=\\.txt]', 'rst-preview-pandoc:preview-file', previewFile
 
     atom.workspace.addOpener (uriToOpen) ->
       try
@@ -65,7 +65,7 @@ module.exports =
       catch error
         return
 
-      return unless protocol is 'markdown-preview-pandoc:'
+      return unless protocol is 'rst-preview-pandoc:'
 
       try
         pathname = decodeURI(pathname) if pathname
@@ -85,13 +85,13 @@ module.exports =
     editor = atom.workspace.getActiveTextEditor()
     return unless editor?
 
-    grammars = atom.config.get('markdown-preview-pandoc.grammars') ? []
+    grammars = atom.config.get('rst-preview-pandoc.grammars') ? []
     return unless editor.getGrammar().scopeName in grammars
 
     @addPreviewForEditor(editor) unless @removePreviewForEditor(editor)
 
   uriForEditor: (editor) ->
-    "markdown-preview-pandoc://editor/#{editor.id}"
+    "rst-preview-pandoc://editor/#{editor.id}"
 
   removePreviewForEditor: (editor) ->
     uri = @uriForEditor(editor)
@@ -107,7 +107,7 @@ module.exports =
     previousActivePane = atom.workspace.getActivePane()
     options =
       searchAllPanes: true
-    if atom.config.get('markdown-preview-pandoc.openPreviewInSplitPane')
+    if atom.config.get('rst-preview-pandoc.openPreviewInSplitPane')
       options.split = 'right'
     atom.workspace.open(uri, options).done (markdownPreviewView) ->
       if isMarkdownPreviewView(markdownPreviewView)
@@ -121,7 +121,7 @@ module.exports =
       @addPreviewForEditor(editor)
       return
 
-    atom.workspace.open "markdown-preview-pandoc://#{encodeURI(filePath)}", searchAllPanes: true
+    atom.workspace.open "rst-preview-pandoc://#{encodeURI(filePath)}", searchAllPanes: true
 
   copyHtml: ->
     editor = atom.workspace.getActiveTextEditor()
