@@ -1,10 +1,10 @@
 {
-  "name": "markdown-preview-pandoc",
-  "version": "0.0.12",
+  "name": "rst-preview-pandoc",
+  "version": "0.0.1",
   "main": "./lib/main",
   "styles": "markdown-preview.less",
-  "description": "Open a pandoc-rendered version of the Markdown in the current editor with `ctrl-shift-m`. This is a fork of markdown-preview package",
-  "repository": "https://github.com/lierdakil/markdown-preview-pandoc",
+  "description": "Open a pandoc-rendered version of the Markdown in the current editor with `ctrl-shift-m`. This is a fork of markdown-preview-pandoc package. This package can read reStructuredText for Sphinx, too. This package needs `pandoc` library and `language-reStructuredText` package.",
+  "repository": "https://github.com/tohosokawa/rst-preview-pandoc",
   "license": "MIT",
   "engines": {
     "atom": ">=0.177.0"
