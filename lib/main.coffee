@@ -87,12 +87,17 @@ module.exports =
     editor = atom.workspace.getActiveTextEditor()
     return unless editor?
 
+    console.warn(editor.getGrammar().scopeName)
+    console.warn(editor.getGrammar().name)
     grammars = atom.config.get('rst-preview-pandoc.grammars') ? []
     return unless editor.getGrammar().scopeName in grammars
 
     if editor.getGrammar().scopeName is 'text.restructuredtext'
       # change option to reStructuredText
       atom.config.set('rst-preview-pandoc.pandocOpts', '-frst -thtml --webtex')
+    else if editor.getGrammar().name is 'GitHub Markdown'
+      atom.config.set('rst-preview-pandoc.pandocOpts', '-fmarkdown_github -thtml --webtex')
+
 
     @addPreviewForEditor(editor) unless @removePreviewForEditor(editor)
 
