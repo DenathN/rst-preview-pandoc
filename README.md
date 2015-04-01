@@ -23,3 +23,11 @@ http://johnmacfarlane.net/pandoc/installing.html
 `language-reStructuredText` is atom package. Please install before use this.
 
 https://atom.io/packages/language-restructuredtext
+
+## Test
+
+Use pandoc library's test files(`.rst`, `.jpg`).
+https://github.com/jgm/pandoc/tree/master/tests
+
+`rst-reader.rst` may be good.
+https://github.com/jgm/pandoc/blob/master/tests/rst-reader.rst
