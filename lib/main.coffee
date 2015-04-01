@@ -38,7 +38,7 @@ module.exports =
         'text.html.basic'
         'text.plain'
         'text.plain.null-grammar'
-        'text.restructuredtext'
+        'gfm.restructuredtext'
       ]
     scrollWithEditor:
       type: 'boolean'
@@ -89,15 +89,19 @@ module.exports =
 
     console.warn(editor.getGrammar().scopeName)
     console.warn(editor.getGrammar().name)
+    console.warn(atom.config.get('rst-preview-pandoc.grammars'))
     grammars = atom.config.get('rst-preview-pandoc.grammars') ? []
     return unless editor.getGrammar().scopeName in grammars
 
-    if editor.getGrammar().scopeName is 'text.restructuredtext'
+    if editor.getGrammar().scopeName is 'gfm.restructuredtext'
       # change option to reStructuredText
       atom.config.set('rst-preview-pandoc.pandocOpts', '-frst -thtml --webtex')
     else if editor.getGrammar().name is 'GitHub Markdown'
       atom.config.set('rst-preview-pandoc.pandocOpts', '-fmarkdown_github -thtml --webtex')
+    else
+      atom.config.set('rst-preview-pandoc.pandocOpts', '-fmarkdown -thtml --webtex')
 
+    console.warn(atom.config.get('rst-preview-pandoc.pandocOpts'))
 
     @addPreviewForEditor(editor) unless @removePreviewForEditor(editor)
 

@@ -12,9 +12,7 @@ For a better way to preview math than default `--webtex`, you can try a pandoc f
 
 ## Usage
 
-This package conflict `markdown-preview` in Core Packages. Please disabled it before install.
-
-And, this package use `pandoc` library(not atom package) and `language-reStructuredText` package. So, install each.
+This package use `pandoc` library(not atom package) and `language-reStructuredText` package. So, install each.
 
 ### pandoc
 
