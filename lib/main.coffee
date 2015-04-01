@@ -38,6 +38,7 @@ module.exports =
         'text.html.basic'
         'text.plain'
         'text.plain.null-grammar'
+        'text.restructuredtext'
       ]
     scrollWithEditor:
       type: 'boolean'
@@ -58,6 +59,7 @@ module.exports =
     atom.commands.add '.tree-view .file .name[data-name$=\\.mkdown]', 'rst-preview-pandoc:preview-file', previewFile
     atom.commands.add '.tree-view .file .name[data-name$=\\.ron]', 'rst-preview-pandoc:preview-file', previewFile
     atom.commands.add '.tree-view .file .name[data-name$=\\.txt]', 'rst-preview-pandoc:preview-file', previewFile
+    atom.commands.add '.tree-view .file .name[data-name$=\\.rst]', 'rst-preview-pandoc:preview-file', previewFile
 
     atom.workspace.addOpener (uriToOpen) ->
       try
@@ -87,6 +89,10 @@ module.exports =
 
     grammars = atom.config.get('rst-preview-pandoc.grammars') ? []
     return unless editor.getGrammar().scopeName in grammars
+
+    if editor.getGrammar().scopeName is 'text.restructuredtext'
+      # change option to reStructuredText
+      atom.config.set('rst-preview-pandoc.pandocOpts', '-frst -thtml --webtex')
 
     @addPreviewForEditor(editor) unless @removePreviewForEditor(editor)
 
