@@ -1,7 +1,7 @@
 # reStructuredText Preview package
 
 Show the pandoc-rendered HTML markdown to the right of the current editor using
-`ctrl-shift-m`
+`ctrl-shift-e`
 
 Live Update scrolls to cursor position when editing. You can also toggle scrolling preview together with editor (like StackEdit for example).
 
@@ -10,21 +10,27 @@ currently enabled for `.markdown`, `.md`, `.mdown`, `.mkd`, `.mkdown`, `.ron`, `
 
 For a better way to preview math than default `--webtex`, you can try a pandoc filter like this one: <https://gist.github.com/lierdakil/6a95278d02256a74a0fc>
 
-## Usage
+## Dependency
 
 This package use `pandoc` library(not atom package) and `language-reStructuredText` package. So, install each.
 
 ### pandoc
 
-install and set PATH.
+install and set PATH. **This is not atom package.**
 
 http://johnmacfarlane.net/pandoc/installing.html
 
 ### language-reStructuredText
 
-`language-reStructuredText` is atom package. Please install before use this.
+`language-reStructuredText` is atom package. Please install and update before use this. **v0.4.0 or later is required.**
 
 https://atom.io/packages/language-restructuredtext
+
+## Usage
+
+Keybind is `ctrl-shift-e`.
+
+Or, Packages -> reStructuredText Preview Pandoc -> Toggle Preview
 
 ## Test
 
