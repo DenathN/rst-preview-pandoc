@@ -1,6 +1,6 @@
 {
   "name": "rst-preview-pandoc",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "./lib/main",
   "styles": "markdown-preview.less",
   "description": "Open a pandoc-rendered version of the Markdown in the current editor with `ctrl-shift-e`. This is a fork of markdown-preview-pandoc package. This package can read reStructuredText for Sphinx, too. This package needs `pandoc` library and `language-reStructuredText` package.",
