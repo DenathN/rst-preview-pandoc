@@ -39,6 +39,7 @@ module.exports =
         'text.plain'
         'text.plain.null-grammar'
         'gfm.restructuredtext'
+        'text.tex.latex'
       ]
     scrollWithEditor:
       type: 'boolean'
@@ -60,6 +61,7 @@ module.exports =
     atom.commands.add '.tree-view .file .name[data-name$=\\.ron]', 'rst-preview-pandoc:preview-file', previewFile
     atom.commands.add '.tree-view .file .name[data-name$=\\.txt]', 'rst-preview-pandoc:preview-file', previewFile
     atom.commands.add '.tree-view .file .name[data-name$=\\.rst]', 'rst-preview-pandoc:preview-file', previewFile
+    atom.commands.add '.tree-view .file .name[data-name$=\\.tex]', 'rst-preview-pandoc:preview-file', previewFile
 
     atom.workspace.addOpener (uriToOpen) ->
       try
@@ -98,6 +100,8 @@ module.exports =
       atom.config.set('rst-preview-pandoc.pandocOpts', '-frst -thtml --webtex')
     else if editor.getGrammar().name is 'GitHub Markdown'
       atom.config.set('rst-preview-pandoc.pandocOpts', '-fmarkdown_github -thtml --webtex')
+    else if editor.getGrammar().scopeName is 'text.tex.latex'
+      atom.config.set('rst-preview-pandoc.pandocOpts', '-flatex -thtml --webtex')
     else
       atom.config.set('rst-preview-pandoc.pandocOpts', '-fmarkdown -thtml --webtex')
 

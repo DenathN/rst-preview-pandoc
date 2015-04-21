@@ -3,7 +3,7 @@
   "version": "0.1.5",
   "main": "./lib/main",
   "styles": "markdown-preview.less",
-  "description": "Open a pandoc-rendered version of the Markdown in the current editor with `ctrl-shift-e`. So, disable `markdown-preview` in Core Package. This is a fork of markdown-preview-pandoc package. This package can read reStructuredText for Sphinx, too. This package needs `pandoc` library and `language-reStructuredText` package.",
+  "description": "Open a pandoc-rendered version of the Markdown in the current editor with `ctrl-shift-e`. This is a fork of markdown-preview-pandoc package. This package can read reStructuredText for Sphinx, too. This package needs `pandoc` library and `language-reStructuredText` package.",
   "repository": "https://github.com/tohosokawa/rst-preview-pandoc/tree/rst",
   "license": "MIT",
   "engines": {
@@ -14,10 +14,6 @@
     "cheerio": "0.15.0",
     "fs-plus": "^2.0.0",
     "grim": "^1.0.0",
-    "highlights": "^1.0.0",
-    "pathwatcher": "^3.0",
-    "temp": "^0.8.1",
-    "underscore-plus": "^1.0.0",
-    "wrench": "^1.5.0"
+    "underscore-plus": "^1.0.0"
   }
 }
