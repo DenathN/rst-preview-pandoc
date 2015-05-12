@@ -48,13 +48,13 @@ atom のバージョンによっては日本語が文字化けするようです
 
 ### エディタ側
 Preference -> Settings を開き、`Font Family` に`takaoGothic`などの日本語のFontを指定してください。  
-![editor_setting.png](image/editor_setting.png)
+![editor_setting.png](https://github.com/tohosokawa/rst-preview-pandoc/raw/rst/image/editor_setting.png)
 
 ### Preview側
 Preference -> Packages -> rst-preview-pandoc から設定画面を開き、
 下記の画像のように `View Code` からソースコードを開いてください。
-![setting.png](image/setting.png)
+![setting.png](https://github.com/tohosokawa/rst-preview-pandoc/raw/rst/image/setting.png)
 
 `rst-preview-pandoc/styles/markdown-preview.less` の３行目に日本語のフォントを追加してください。
 
-![source.png](image/source.png)
+![source.png](https://github.com/tohosokawa/rst-preview-pandoc/raw/rst/image/source.png)
