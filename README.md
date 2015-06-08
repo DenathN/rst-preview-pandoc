@@ -3,7 +3,9 @@
 Show the pandoc-rendered HTML markdown to the right of the current editor using
 `ctrl-shift-e`.
 
-Live Update scrolls to cursor position when editing. You can also toggle scrolling preview together with editor (like StackEdit for example).
+Live Update scrolls to cursor position when editing. You can also toggle scrolling preview together with editor (like StackEdit for example).afdafafadf
+
+
 
 It can be activated from the editor using the `ctrl-shift-e` key-binding and is
 currently enabled for `.markdown`, `.md`, `.mdown`, `.mkd`, `.mkdown`, `.ron`, `.txt`, `.tex` and `.rst` files.
