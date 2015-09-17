@@ -39,6 +39,9 @@ module.exports =
         'text.plain'
         'text.plain.null-grammar'
         'gfm.restructuredtext'
+        'text.restructuredtext'
+        'source.gfm.restructuredtext'
+        'text.restructuredtext source.gfm.restructuredtext'
         'text.tex.latex'
       ]
     scrollWithEditor:
