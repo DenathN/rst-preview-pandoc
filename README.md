@@ -3,7 +3,7 @@
 Show the pandoc-rendered HTML markdown to the right of the current editor using
 `ctrl-shift-e`.
 
-Live Update scrolls to cursor position when editing. You can also toggle scrolling preview together with editor (like StackEdit for example).afdafafadf
+Live Update scrolls to cursor position when editing. You can also toggle scrolling preview together with editor (like StackEdit for example).
 
 
 
@@ -24,7 +24,7 @@ http://johnmacfarlane.net/pandoc/installing.html
 
 ### language-reStructuredText
 
-`language-reStructuredText` is atom package. Please install and update before use this. **v0.4.0 or later is required.**
+`language-reStructuredText` is atom package. Please install and update before use this. **v0.9.0 or later is required.**
 
 https://atom.io/packages/language-restructuredtext
 
