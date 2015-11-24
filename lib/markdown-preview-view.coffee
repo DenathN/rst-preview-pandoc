@@ -86,7 +86,7 @@ class MarkdownPreviewView extends ScrollView
   handleEvents: ->
     @disposables.add atom.grammars.onDidAddGrammar => _.debounce((=> @renderMarkdown()), 250)
     @disposables.add atom.grammars.onDidUpdateGrammar _.debounce((=> @renderMarkdown()), 250)
-    @disposables.add @editor.onDidChangeScrollTop =>
+    @disposables.add atom.views.getView(@editor).onDidChangeScrollTop =>
       @scrollToEditorPos() if atom.config.get(
         'rst-preview-pandoc.scrollWithEditor')
 
